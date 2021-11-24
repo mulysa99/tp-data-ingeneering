@@ -10,7 +10,7 @@ const connection = mysql.createPool({
 	database: process.env.MYSQL_DATABASE || 'test'
 });
 
-app.get('/', (req, res) => {
+app2.get('/', (req, res) => {
 	connection.query('SELECT * FROM Student' , (err, rows) => {
 		if(err){
 			res.json({
@@ -27,4 +27,4 @@ app.get('/', (req, res) => {
 	});
 });
 
-app.listen(5000, () => console.log('listining on port 5000'));
+app2.listen(5000, () => console.log('listining on port 5000'));
